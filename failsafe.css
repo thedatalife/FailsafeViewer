@@ -1,0 +1,36 @@
+.failsafe-data {
+  background-color: wheat;
+}
+
+.failsafe-data .toggle-expand > .key:hover {
+  background-color: grey;
+}
+
+.failsafe-data .object > div {
+  margin-left: 20px;
+}
+
+.failsafe-data .toggle-icon {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+}
+
+.failsafe-data div {
+  overflow: hidden;
+  clear: both;
+}
+
+.failsafe-data div > .key {
+  margin-right: 12px;
+  width: 200px;
+  float: left;
+}
+
+.failsafe-data .toggle-expand .object {
+  display: none;
+}
+
+.failsafe-data .toggle-expand.show > .object {
+  display: block;
+}

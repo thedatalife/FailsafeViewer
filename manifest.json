@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Failsafe JSON Viewer",
+  "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["http://pdp.ci.co.uk:9000/*"],
+      "css": ["failsafe.css"],
+      "js": ["contentscript.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "background"
+  ],
+  "web_accessible_resources": [
+    "failsafe.js",
+    "failsafe.css"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
