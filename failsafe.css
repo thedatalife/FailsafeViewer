@@ -1,5 +1,7 @@
 .failsafe-data {
   background-color: wheat;
+  padding:5px;
+  font-size:11px;
 }
 
 .failsafe-data .toggle-expand > .key:hover {
@@ -14,6 +16,8 @@
   width: 40px;
   height: 40px;
   border: solid 1px black;
+  cursor:pointer;
+  padding: 0 5px;
 }
 
 .failsafe-data div {
