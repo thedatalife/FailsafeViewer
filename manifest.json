@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Failsafe JSON Viewer",
   "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
@@ -7,9 +7,55 @@
   "content_scripts": [
     {
       "matches": [
-        "http://pdp.ci.co.uk:9000/*",
-        "https://preview-production-pdp.sony.eu/*"
-        
+        "http://pdp.ci.co.uk:9000/*failsafe=true*",
+        "http://pdp.ci.com:9000/*failsafe=true*",
+        "http://pdp.ci.us:9000/*failsafe=true*",
+        "http://pdp.ci.ch:9000/*failsafe=true*",
+        "http://pdp.ci.fr:9000/*failsafe=true*",
+        "http://pdp.ci.be:9000/*failsafe=true*",
+        "http://pdp.ci.ie:9000/*failsafe=true*",
+        "http://pdp.ci.ru:9000/*failsafe=true*",
+
+        "http://pdp.sit1a.co.uk:9000/*failsafe=true*",
+        "http://pdp.sit1a.com:9000/*failsafe=true*",
+        "http://pdp.sit1a.us:9000/*failsafe=true*",
+        "http://pdp.sit1a.ch:9000/*failsafe=true*",
+        "http://pdp.sit1a.fr:9000/*failsafe=true*",
+        "http://pdp.sit1a.be:9000/*failsafe=true*",
+        "http://pdp.sit1a.ie:9000/*failsafe=true*",
+        "http://pdp.sit1a.ru:9000/*failsafe=true*",
+
+
+        "http://production-pdp.sony.eu/*failsafe=true*",
+	      "https://production-pdp.sony.eu/*failsafe=true*",
+	      "http://preview-production-pdp.sony.eu/*failsafe=true*",
+        "https://preview-production-pdp.sony.eu/*failsafe=true*",
+
+        "http://uat-pdp.sony.eu/*failsafe=true*",
+        "https://uat-pdp.sony.eu/*failsafe=true*",
+        "http://preview-uat-pdp.sony.eu/*failsafe=true*",
+        "https://preview-uat-pdp.sony.eu/*failsafe=true*",
+
+        "http://sit1a-pdp.sony.eu/*failsafe=true*",
+        "https://sit1a-pdp.sony.eu/*failsafe=true*",
+        "http://preview-sit1a-pdp.sony.eu/*failsafe=true*",
+        "https://preview-sit1a-pdp.sony.eu/*failsafe=true*",
+
+        "http://sit1b-pdp.sony.eu/*failsafe=true*",
+        "https://sit1b-pdp.sony.eu/*failsafe=true*",
+        "http://preview-sit1b-pdp.sony.eu/*failsafe=true*",
+        "https://preview-sit1b-pdp.sony.eu/*failsafe=true*",
+
+        "http://sit2-pdp.sony.eu/*failsafe=true*",
+        "https://sit2-pdp.sony.eu/*failsafe=true*",
+        "http://preview-sit2-pdp.sony.eu/*failsafe=true*",
+        "https://preview-sit2-pdp.sony.eu/*failsafe=true*",
+
+        "http://pet-pdp.sony.eu/*failsafe=true*",
+        "https://pet-pdp.sony.eu/*failsafe=true*",
+        "http://preview-pet-pdp.sony.eu/*failsafe=true*",
+        "https://preview-pet-pdp.sony.eu/*failsafe=true*"
+
       ],
       "css": ["failsafe.css"],
       "js": ["contentscript.js"],
