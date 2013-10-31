@@ -6,7 +6,11 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "matches": ["http://pdp.ci.co.uk:9000/*"],
+      "matches": [
+        "http://pdp.ci.co.uk:9000/*",
+        "https://preview-production-pdp.sony.eu/*"
+        
+      ],
       "css": ["failsafe.css"],
       "js": ["contentscript.js"],
       "run_at": "document_idle"
