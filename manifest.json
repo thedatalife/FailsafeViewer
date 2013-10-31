@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Failsafe JSON Viewer",
   "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
@@ -8,8 +8,54 @@
     {
       "matches": [
         "http://pdp.ci.co.uk:9000/*",
-        "https://preview-production-pdp.sony.eu/*"
-        
+        "http://pdp.ci.com:9000/*",
+        "http://pdp.ci.us:9000/*",
+        "http://pdp.ci.ch:9000/*",
+        "http://pdp.ci.fr:9000/*",
+        "http://pdp.ci.be:9000/*",
+        "http://pdp.ci.ie:9000/*",
+        "http://pdp.ci.ru:9000/*",
+
+        "http://pdp.sit1a.co.uk:9000/*",
+        "http://pdp.sit1a.com:9000/*",
+        "http://pdp.sit1a.us:9000/*",
+        "http://pdp.sit1a.ch:9000/*",
+        "http://pdp.sit1a.fr:9000/*",
+        "http://pdp.sit1a.be:9000/*",
+        "http://pdp.sit1a.ie:9000/*",
+        "http://pdp.sit1a.ru:9000/*",
+
+
+        "http://production-pdp.sony.eu/*",
+	      "https://production-pdp.sony.eu/*",
+	      "http://preview-production-pdp.sony.eu/*",
+        "https://preview-production-pdp.sony.eu/*",
+
+        "http://uat-pdp.sony.eu/*",
+        "https://uat-pdp.sony.eu/*",
+        "http://preview-uat-pdp.sony.eu/*",
+        "https://preview-uat-pdp.sony.eu/*",
+
+        "http://sit1a-pdp.sony.eu/*",
+        "https://sit1a-pdp.sony.eu/*",
+        "http://preview-sit1a-pdp.sony.eu/*",
+        "https://preview-sit1a-pdp.sony.eu/*",
+
+        "http://sit1b-pdp.sony.eu/*",
+        "https://sit1b-pdp.sony.eu/*",
+        "http://preview-sit1b-pdp.sony.eu/*",
+        "https://preview-sit1b-pdp.sony.eu/*",
+
+        "http://sit2-pdp.sony.eu/*",
+        "https://sit2-pdp.sony.eu/*",
+        "http://preview-sit2-pdp.sony.eu/*",
+        "https://preview-sit2-pdp.sony.eu/*",
+
+        "http://pet-pdp.sony.eu/*",
+        "https://pet-pdp.sony.eu/*",
+        "http://preview-pet-pdp.sony.eu/*",
+        "https://preview-pet-pdp.sony.eu/*"
+
       ],
       "css": ["failsafe.css"],
       "js": ["contentscript.js"],
