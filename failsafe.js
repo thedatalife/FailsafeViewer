@@ -1,9 +1,6 @@
-(function($) {
-
 var FailSafe = function($element) {
   this.$element = $element;
   this.data = $.parseJSON($element.text());
-  
   this.init();
 }
 
@@ -15,6 +12,7 @@ FailSafe.prototype = {
     this.string = "<div class='failsafe-data'>";
     this.string += "<button class='toggle-expandAll'>Expand all</button>";
     this.string += "<button class='toggle-collapseAll'>Collapse all</button>";
+    this.string += "<button class='toggle-copyAll'>Copy JSON</button>";
     this.buildTree(this.data);
     this.string += "</div>";
     
@@ -29,11 +27,17 @@ FailSafe.prototype = {
     this.$failsafe.find('.toggle-expand').on('click', $.proxy(this.toggleExpand, this));
     this.$failsafe.find('.toggle-expandAll').on('click', $.proxy(this.toggleExpandAll, this));
     this.$failsafe.find('.toggle-collapseAll').on('click', $.proxy(this.toggleCollapseAll, this));
+    this.$failsafe.find('.toggle-copyAll').on('click', $.proxy(this.toggleCopyAll, this));
   },
   removeEvents: function() {
     this.$failsafe.find('.toggle-expand').off('click');
     this.$failsafe.find('.toggle-expandAll').off('click');
     this.$failsafe.find('.toggle-collapseAll').off('click');
+    this.$failsafe.find('.toggle-copyAll').off('click');
+  },
+  toggleCopyAll: function(e){
+    //Send results to Backgrond Page
+    chrome.extension.sendRequest({ text: JSON.stringify(this.data, null, 2) });
   },
   toggleCollapseAll: function(e){
     e.stopPropagation();
@@ -92,9 +96,3 @@ FailSafe.prototype = {
     }
   }
 }
-
-$(".visuallyhidden pre").each(function() {
-  new FailSafe($(this));
-});
-
-})(jQuery);
