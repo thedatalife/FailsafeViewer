@@ -28,15 +28,25 @@ FailSafe.prototype = {
     this.$failsafe.find('.toggle-expandAll').on('click', $.proxy(this.toggleExpandAll, this));
     this.$failsafe.find('.toggle-collapseAll').on('click', $.proxy(this.toggleCollapseAll, this));
     this.$failsafe.find('.toggle-copyAll').on('click', $.proxy(this.toggleCopyAll, this));
+    this.$failsafe.find('.toggle-icon.copy').on('click', $.proxy(this.toggleCopySection, this));
+
+
   },
   removeEvents: function() {
     this.$failsafe.find('.toggle-expand').off('click');
     this.$failsafe.find('.toggle-expandAll').off('click');
     this.$failsafe.find('.toggle-collapseAll').off('click');
     this.$failsafe.find('.toggle-copyAll').off('click');
+    this.$failsafe.find('.toggle-icon.copy').off('click');
+  },
+  toggleCopySection: function(e){
+    var target = e.currentTarget;
+    var json_data = JSON.parse($(target).attr("data-copy-data"));
+    chrome.extension.sendRequest({ text: JSON.stringify(json_data, null, 2) });
   },
   toggleCopyAll: function(e){
     //Send results to Backgrond Page
+    e.stopPropagation();
     chrome.extension.sendRequest({ text: JSON.stringify(this.data, null, 2) });
   },
   toggleCollapseAll: function(e){
@@ -52,6 +62,7 @@ FailSafe.prototype = {
   toggleExpand: function(e) {
     e.stopPropagation();
     var $target = $(e.target);
+    if ($target.hasClass("copy")) return;
     $target = $target.parent('.toggle-expand');
     if($target.hasClass('show')) {
       $target.removeClass('show');
@@ -65,7 +76,7 @@ FailSafe.prototype = {
     if(typeof this.data.module !== "undefined") {
       if(typeof this.data.module.version !== "undefined") {
         var $title = this.$element.parent().children('a');
-        $title.text($title.text() + ' (Version = ' + this.data.module.version +') ');
+        $title.html($title.text() + ' <span class=\'version\'>(Version = ' + this.data.module.version +')</span> ');
       }
     }
   },
@@ -82,17 +93,23 @@ FailSafe.prototype = {
       this.string += "<div class='"+ classes +"'>";
       if(type === "object") {
         this.string += "<i class='toggle-icon'>+</i>";
-        this.string += (value && value.version)? " (Version = "+value.version+")" : "";
+        this.string += " <i class='toggle-icon copy' data-copy-data='"+JSON.stringify(value)+"'></i>";
       }
+      key += (value && value.version)? " <span class='version'>(Version = "+value.version+")</span>" : "";
       this.string += "<span class='key'>"+key+"</span>";
       if(type === "object") {
-        this.string += "<div class='object'>";
-        this.buildTree(value);
-        this.string += "</div>";
+        if ($.isEmptyObject(value))
+          this.string += "<span class='value'>{#empty#}</span>";  
+        else{
+          this.string += "<div class='object'>";
+          this.buildTree(value);
+          this.string += "</div>";
+        }
       } else {
         this.string += "<span class='value'>" + value + "</span>";
       }
       this.string += "</div>";
+
     }
   }
 }
