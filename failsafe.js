@@ -13,6 +13,8 @@ FailSafe.prototype = {
     this.$element.empty();
     
     this.string = "<div class='failsafe-data'>";
+    this.string += "<button class='toggle-expandAll'>Expand all</button>";
+    this.string += "<button class='toggle-collapseAll'>Collapse all</button>";
     this.buildTree(this.data);
     this.string += "</div>";
     
@@ -25,11 +27,24 @@ FailSafe.prototype = {
   },
   addEvents: function() {
     this.$failsafe.find('.toggle-expand').on('click', $.proxy(this.toggleExpand, this));
+    this.$failsafe.find('.toggle-expandAll').on('click', $.proxy(this.toggleExpandAll, this));
+    this.$failsafe.find('.toggle-collapseAll').on('click', $.proxy(this.toggleCollapseAll, this));
   },
   removeEvents: function() {
     this.$failsafe.find('.toggle-expand').off('click');
+    this.$failsafe.find('.toggle-expandAll').off('click');
+    this.$failsafe.find('.toggle-collapseAll').off('click');
   },
-  
+  toggleCollapseAll: function(e){
+    e.stopPropagation();
+    var $target = $(e.target).parent();
+    $target.find(".toggle-expand").removeClass("show");    
+  },
+  toggleExpandAll:function(e){
+    e.stopPropagation();
+    var $target = $(e.target).parent();
+    $target.find(".toggle-expand").removeClass("show").addClass("show");
+  },  
   toggleExpand: function(e) {
     e.stopPropagation();
     var $target = $(e.target);
@@ -42,11 +57,11 @@ FailSafe.prototype = {
   },
   
   extractData: function() {
-    console.log(this.data);
+    
     if(typeof this.data.module !== "undefined") {
       if(typeof this.data.module.version !== "undefined") {
         var $title = this.$element.parent().children('a');
-        $title.text($title.text() + ' Version = ' + this.data.module.version);
+        $title.text($title.text() + ' (Version = ' + this.data.module.version +') ');
       }
     }
   },
@@ -63,6 +78,7 @@ FailSafe.prototype = {
       this.string += "<div class='"+ classes +"'>";
       if(type === "object") {
         this.string += "<i class='toggle-icon'>+</i>";
+        this.string += (value && value.version)? " (Version = "+value.version+")" : "";
       }
       this.string += "<span class='key'>"+key+"</span>";
       if(type === "object") {
