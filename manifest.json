@@ -68,7 +68,6 @@
   ],
   "permissions": [
     "activeTab",
-    "tabs",
     "background",
     "clipboardWrite",
     "clipboardRead"
