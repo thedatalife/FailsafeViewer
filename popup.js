@@ -1,7 +1,14 @@
 var tablink = "";
 
-function click(e) {
+function enableClick(e) {
   var newLink = updateQueryStringParameter(tablink, "failsafe", "true");
+  chrome.tabs.executeScript(null,
+      {code:"window.location.href='"+newLink+"'"});
+  window.close()
+}
+
+function disableClick(e) {
+  var newLink = tablink.replace("?failsafe=true","") || tablink.replace("&failsafe=true","")
   chrome.tabs.executeScript(null,
       {code:"window.location.href='"+newLink+"'"});
   window.close()
@@ -11,9 +18,11 @@ $(document).on("ready", function(e){
    chrome.tabs.getSelected(null,function(tab) {
     tablink = tab.url;
     if (tablink.indexOf("failsafe=true") == -1)
-        $("#failsafe").on("click", click)
-    else
+        $("#failsafe").on("click", enableClick)
+    else{
         $("#failsafe").addClass("disabled");
+        $("#failsafe").on("click", disableClick)
+    }
   });   
 })
 

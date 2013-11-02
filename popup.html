@@ -17,12 +17,20 @@
             -webkit-font-smoothing: subpixel-antialiased;
             vertical-align: middle;
             color:#fff;
-        }
-        .btn.disabled{
-            background: #CCCCCC;
-            cursor: default;
             -webkit-user-select: none;
             user-select: none;
+        }
+        .btn .disable-text{
+            display:none;
+        }
+        .btn.disabled{
+            background: #cc2725;
+        }
+        .btn.disabled .enable-text{
+            display:none;
+        }
+        .btn.disabled .disable-text{
+            display:inline;
         }
     </style>
     <script src="jquery.js"></script>
@@ -30,6 +38,9 @@
 </head>
 <body>
 <h3>Sony GWT Helpers</h3>
-<div id="failsafe" class="btn">Enable Failsafe</div>
+<div id="failsafe" class="btn">
+    <span class="enable-text">Enable Failsafe</span>
+    <span class="disable-text">Disable Failsafe</span>
+</div>
 </body>
 </html>
