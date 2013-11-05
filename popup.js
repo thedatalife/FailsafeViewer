@@ -14,6 +14,13 @@ function disableClick(e) {
   window.close()
 }
 
+function enableImageWidths(e){
+  chrome.tabs.executeScript(null,
+      {code:"showIqInfo()"});
+  $("#seeImageWidths").off("click", enableImageWidths);
+  window.close()
+}
+
 $(document).on("ready", function(e){
    chrome.tabs.getSelected(null,function(tab) {
     tablink = tab.url;
@@ -23,6 +30,15 @@ $(document).on("ready", function(e){
         $("#failsafe").addClass("disabled");
         $("#failsafe").on("click", disableClick)
     }
+    chrome.tabs.executeScript(null, {code:"showIqInfoEnabled"}, function(results){
+        if (results && results[0] && results[0] == true){
+            $("#seeImageWidths").addClass("disabled");
+        }else{
+            $("#seeImageWidths").on("click", enableImageWidths);
+        }
+    });
+
+    
   });   
 })
 

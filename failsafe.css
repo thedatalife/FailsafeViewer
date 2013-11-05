@@ -60,3 +60,22 @@
 .failsafe-data .toggle-expand.show > .object {
   height:auto;
 }
+
+.iq-info-div{
+  position:relative; 
+  z-index:100;
+  font-size:8px;
+  width:120px; 
+  line-height:8px;
+  min-height:40px;
+  max-height:80px;
+  color:#FFF;
+  background:#333;
+  text-align:left !important;
+  cursor:pointer;
+  display:inline-block;
+}
+.iq-info-div a{
+  color:#fff;
+  text-decoration: underline;
+}

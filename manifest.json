@@ -62,7 +62,7 @@
 
       ],
       "css": ["failsafe.css"],
-      "js": ["jquery.js", "failsafe.js", "contentscript.js"],
+      "js": ["jquery.js", "jquery-ui-1.10.3.custom.min.js", "failsafe.js", "contentscript.js"],
       "run_at": "document_end"
     }
   ],
