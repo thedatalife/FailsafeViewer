@@ -58,7 +58,42 @@
         "http://preview-pet-pdp.sony.eu/*failsafe=true*",
 
         "https://pet-pdp.sony.eu/*failsafe=true*",
-        "https://preview-pet-pdp.sony.eu/*failsafe=true*"
+        "https://preview-pet-pdp.sony.eu/*failsafe=true*",
+
+        "http://production-pdp.sony.fr/*failsafe=true*",
+        "http://preview-production-pdp.sony.fr/*failsafe=true*",
+        "https://production-pdp.sony.fr/*failsafe=true*",
+        "https://preview-production-pdp.sony.fr/*failsafe=true*",
+
+        "http://uat-pdp.sony.fr/*failsafe=true*",
+        "http://preview-uat-pdp.sony.fr/*failsafe=true*",
+
+        "https://uat-pdp.sony.fr/*failsafe=true*",
+        "https://preview-uat-pdp.sony.fr/*failsafe=true*",
+
+        "http://sit1a-pdp.sony.fr/*failsafe=true*",
+        "http://preview-sit1a-pdp.sony.fr/*failsafe=true*",
+
+        "https://sit1a-pdp.sony.fr/*failsafe=true*",
+        "https://preview-sit1a-pdp.sony.fr/*failsafe=true*",
+
+        "http://sit1b-pdp.sony.fr/*failsafe=true*",
+        "http://preview-sit1b-pdp.sony.fr/*failsafe=true*",
+
+        "https://sit1b-pdp.sony.fr/*failsafe=true*",
+        "https://preview-sit1b-pdp.sony.fr/*failsafe=true*",
+
+        "http://sit2-pdp.sony.fr/*failsafe=true*",
+        "http://preview-sit2-pdp.sony.fr/*failsafe=true*",
+
+        "https://sit2-pdp.sony.fr/*failsafe=true*",
+        "https://preview-sit2-pdp.sony.fr/*failsafe=true*",
+
+        "http://pet-pdp.sony.fr/*failsafe=true*",
+        "http://preview-pet-pdp.sony.fr/*failsafe=true*",
+
+        "https://pet-pdp.sony.fr/*failsafe=true*",
+        "https://preview-pet-pdp.sony.fr/*failsafe=true*"
 
       ],
       "css": ["failsafe.css"],
