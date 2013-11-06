@@ -101,6 +101,8 @@
       "run_at": "document_end"
     }
   ],
+  "update_url": "http://43.138.9.18/failsafe-chrome-extension/updates.xml",
+  //Private Key: http://43.138.9.18/failsafe-chrome-extension/FailsafeViewer.pem
   "permissions": [
     "activeTab",
     "background",
