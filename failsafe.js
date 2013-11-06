@@ -92,8 +92,8 @@ FailSafe.prototype = {
       
       this.string += "<div class='"+ classes +"'>";
       if(type === "object") {
-        this.string += "<a class='toggle-icon' title='Expand JSON' href='#'>+</a>";
-        this.string += " <a class='toggle-icon copy' title='Copy to Clipboard' data-copy-data='"+JSON.stringify(value)+"' href='#'></a>";
+        this.string += "<a class='toggle-icon' title='Expand JSON' href='javascript:void(0);'>+</a>";
+        this.string += " <a class='toggle-icon copy' title='Copy to Clipboard' data-copy-data='"+JSON.stringify(value)+"' href='javascript:void(0);'></a>";
       }
       key += (value && value.version)? " <span class='version'>(Version = "+value.version+")</span>" : "";
       this.string += "<span class='key'>"+key+"</span>";
