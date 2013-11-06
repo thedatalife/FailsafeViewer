@@ -1,9 +1,9 @@
 {
-  "manifest_version": 5,
+  "manifest_version": 6,
 
   "name": "Failsafe JSON Viewer",
   "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
-  "version": "1.4",
+  "version": "1.41",
   "content_scripts": [
     {
       "matches": [
