@@ -1,9 +1,9 @@
 {
-  "manifest_version": 6,
+  "manifest_version": 7,
 
   "name": "Failsafe JSON Viewer",
   "description": "This extension will add interactivity to the failsafe data. You can collapse nodes and copy whole pages to the clipboard.",
-  "version": "1.41",
+  "version": "1.42",
   "content_scripts": [
     {
       "matches": [
@@ -25,76 +25,42 @@
         "http://pdp.sit1a.ie:9000/*failsafe=true*",
         "http://pdp.sit1a.ru:9000/*failsafe=true*",
 
-        "http://production-pdp.sony.eu/*failsafe=true*",
-	      "http://preview-production-pdp.sony.eu/*failsafe=true*",
-        "https://production-pdp.sony.eu/*failsafe=true*",
-        "https://preview-production-pdp.sony.eu/*failsafe=true*",
-
-        "http://uat-pdp.sony.eu/*failsafe=true*",
-        "http://preview-uat-pdp.sony.eu/*failsafe=true*",
-
-        "https://uat-pdp.sony.eu/*failsafe=true*",
-        "https://preview-uat-pdp.sony.eu/*failsafe=true*",
-
-        "http://sit1a-pdp.sony.eu/*failsafe=true*",
-        "http://preview-sit1a-pdp.sony.eu/*failsafe=true*",
-
-        "https://sit1a-pdp.sony.eu/*failsafe=true*",
-        "https://preview-sit1a-pdp.sony.eu/*failsafe=true*",
-
-        "http://sit1b-pdp.sony.eu/*failsafe=true*",
-        "http://preview-sit1b-pdp.sony.eu/*failsafe=true*",
-
-        "https://sit1b-pdp.sony.eu/*failsafe=true*",
-        "https://preview-sit1b-pdp.sony.eu/*failsafe=true*",
-
-        "http://sit2-pdp.sony.eu/*failsafe=true*",
-        "http://preview-sit2-pdp.sony.eu/*failsafe=true*",
-
-        "https://sit2-pdp.sony.eu/*failsafe=true*",
-        "https://preview-sit2-pdp.sony.eu/*failsafe=true*",
-
-        "http://pet-pdp.sony.eu/*failsafe=true*",
-        "http://preview-pet-pdp.sony.eu/*failsafe=true*",
-
-        "https://pet-pdp.sony.eu/*failsafe=true*",
-        "https://preview-pet-pdp.sony.eu/*failsafe=true*",
-
-        "http://production-pdp.sony.fr/*failsafe=true*",
-        "http://preview-production-pdp.sony.fr/*failsafe=true*",
-        "https://production-pdp.sony.fr/*failsafe=true*",
-        "https://preview-production-pdp.sony.fr/*failsafe=true*",
-
-        "http://uat-pdp.sony.fr/*failsafe=true*",
-        "http://preview-uat-pdp.sony.fr/*failsafe=true*",
-
-        "https://uat-pdp.sony.fr/*failsafe=true*",
-        "https://preview-uat-pdp.sony.fr/*failsafe=true*",
-
-        "http://sit1a-pdp.sony.fr/*failsafe=true*",
-        "http://preview-sit1a-pdp.sony.fr/*failsafe=true*",
-
-        "https://sit1a-pdp.sony.fr/*failsafe=true*",
-        "https://preview-sit1a-pdp.sony.fr/*failsafe=true*",
-
-        "http://sit1b-pdp.sony.fr/*failsafe=true*",
-        "http://preview-sit1b-pdp.sony.fr/*failsafe=true*",
-
-        "https://sit1b-pdp.sony.fr/*failsafe=true*",
-        "https://preview-sit1b-pdp.sony.fr/*failsafe=true*",
-
-        "http://sit2-pdp.sony.fr/*failsafe=true*",
-        "http://preview-sit2-pdp.sony.fr/*failsafe=true*",
-
-        "https://sit2-pdp.sony.fr/*failsafe=true*",
-        "https://preview-sit2-pdp.sony.fr/*failsafe=true*",
-
-        "http://pet-pdp.sony.fr/*failsafe=true*",
-        "http://preview-pet-pdp.sony.fr/*failsafe=true*",
-
-        "https://pet-pdp.sony.fr/*failsafe=true*",
-        "https://preview-pet-pdp.sony.fr/*failsafe=true*"
-
+        "*://*.sony.eu/*failsafe=true*",
+        "*://*.sony.co.uk/*failsafe=true*",
+        "*://*.sony.ch/*failsafe=true*",
+        "*://*.sony.ie/*failsafe=true*",
+        "*://*.sony.fr/*failsafe=true*",
+        "*://*.sony.be/*failsafe=true*",
+        "*://*.sony.ru/*failsafe=true*",
+        "*://*.sony.at/*failsafe=true*",
+        "*://*.sony.ba/*failsafe=true*",
+        "*://*.sony.bg/*failsafe=true*",
+        "*://*.sony.hr/*failsafe=true*",
+        "*://*.sony.cz/*failsafe=true*",
+        "*://*.sony.dk/*failsafe=true*",
+        "*://*.sony.ee/*failsafe=true*",
+        "*://*.sony.fi/*failsafe=true*",
+        "*://*.sony.de/*failsafe=true*",
+        "*://*.sony.gr/*failsafe=true*",
+        "*://*.sony.hu/*failsafe=true*",
+        "*://*.sony.it/*failsafe=true*",
+        "*://*.sony.kz/*failsafe=true*",
+        "*://*.sony.lv/*failsafe=true*",
+        "*://*.sony.lt/*failsafe=true*",
+        "*://*.sony.lu/*failsafe=true*",
+        "*://*.sony.mk/*failsafe=true*",
+        "*://*.sony.nl/*failsafe=true*",
+        "*://*.sony.no/*failsafe=true*",
+        "*://*.sony.pl/*failsafe=true*",
+        "*://*.sony.pt/*failsafe=true*",
+        "*://*.sony.ro/*failsafe=true*",
+        "*://*.sony.rs/*failsafe=true*",
+        "*://*.sony.sk/*failsafe=true*",
+        "*://*.sony.si/*failsafe=true*",
+        "*://*.sony.es/*failsafe=true*",
+        "*://*.sony.se/*failsafe=true*",
+        "*://*.sony.tr/*failsafe=true*",
+        "*://*.sony.ua/*failsafe=true*"
       ],
       "css": ["failsafe.css"],
       "js": ["jquery.js", "jquery-ui-1.10.3.custom.min.js", "failsafe.js", "contentscript.js"],
